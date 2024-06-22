@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55954dd9e1eacd43b0e7b70eeacca80, type: 3}
+  m_Name: Dragon_Footsteps
+  m_EditorClassIdentifier: 
+  AudioGroup: FootSteps
+  Clips:
+  - {fileID: 8300000, guid: 92d72b6289a6dee439dfc504c56f3177, type: 3}
+  - {fileID: 8300000, guid: 995eaff00ea7d9748b7d53af63dd7f05, type: 3}
+  - {fileID: 8300000, guid: 035f9e96c66b9a742816987e56abca8a, type: 3}
+  - {fileID: 8300000, guid: 4fbef4a7061706742a758f5058d9fc8b, type: 3}
+  - {fileID: 8300000, guid: b5c7ea9bfbeb2a94b9d8455064b6d997, type: 3}
+  - {fileID: 8300000, guid: 4074c85a2b135314486b05e2c6d1ae34, type: 3}
+  - {fileID: 8300000, guid: 3ab38c8cf6e324448a219eae9053319b, type: 3}
+  - {fileID: 8300000, guid: b61aa696fd562394ca6d75de9b1b2605, type: 3}
+  - {fileID: 8300000, guid: 1650d282718beeb4da7a427b3c910e34, type: 3}
+  - {fileID: 8300000, guid: 2ec91e0f8ac4a5343ac9131a7195319f, type: 3}
+  - {fileID: 8300000, guid: e59d14d320c551045883c8982a52281c, type: 3}
+  - {fileID: 8300000, guid: ae87a8ee7d788024eb3f700ec03f4e4b, type: 3}
+  - {fileID: 8300000, guid: 3da6eb1182dee9d40a27fa6268d10601, type: 3}
+  - {fileID: 8300000, guid: f0ccd975278c59340bd0e880e2a0b24d, type: 3}
+  - {fileID: 8300000, guid: d5d08e300a09a7a4bbf4db8a1f5903c6, type: 3}
+  - {fileID: 8300000, guid: 0030a5a3b6e7c3448b650da6840f9088, type: 3}
+  - {fileID: 8300000, guid: 3033114b791924240beb1cc4c7b31ec9, type: 3}
+  - {fileID: 8300000, guid: d6c9e7e11eaff5640b75cf8613b2f3a0, type: 3}
+  - {fileID: 8300000, guid: abad7b90628133f47893b69ee9a39836, type: 3}
+  - {fileID: 8300000, guid: fb96ca74c3088bd468b53e2aafd128e4, type: 3}
+  TerrainIndex: 0
+  Volume: 0.481
+  Pitch: -0.49
+  SteroPan: 0
+  SpatialBlend: 1

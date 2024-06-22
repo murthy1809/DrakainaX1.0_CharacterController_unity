@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55954dd9e1eacd43b0e7b70eeacca80, type: 3}
+  m_Name: SwordEquip
+  m_EditorClassIdentifier: 
+  AudioGroup: Sheathing
+  Clips:
+  - {fileID: 8300000, guid: 895d8ba58b2493942811cda4b39d8b96, type: 3}
+  - {fileID: 8300000, guid: 8e61d05a5b38e344b9849756d536a12a, type: 3}
+  - {fileID: 8300000, guid: 82d10b9d582cdb847930aa689266d168, type: 3}
+  - {fileID: 8300000, guid: 08da561b981f2c24586d63fdd72c7a5e, type: 3}
+  - {fileID: 8300000, guid: 75c050e493f4e6d4280fbe9af9a6044c, type: 3}
+  TerrainIndex: 0
+  Volume: 0.481
+  Pitch: -0.49
+  SteroPan: 0
+  SpatialBlend: 1

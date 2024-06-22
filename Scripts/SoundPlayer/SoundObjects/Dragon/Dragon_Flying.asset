@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55954dd9e1eacd43b0e7b70eeacca80, type: 3}
+  m_Name: Dragon_Flying
+  m_EditorClassIdentifier: 
+  AudioGroup: Flying
+  Clips:
+  - {fileID: 8300000, guid: 0669bdc9a9b129646acc2192dd31a88e, type: 3}
+  - {fileID: 8300000, guid: 6304dc1ae60c1e540963d7ee1439e855, type: 3}
+  - {fileID: 8300000, guid: b88eccae129cdff41974dc6c08d1b665, type: 3}
+  - {fileID: 8300000, guid: a91235cdb3f3ed243a1e2d7d3e08ef8c, type: 3}
+  - {fileID: 8300000, guid: 0e66fb054ffbf08498e2865d3653a76a, type: 3}
+  - {fileID: 8300000, guid: 4ac1fb43560d2a94cbe7cd5663c2b251, type: 3}
+  - {fileID: 8300000, guid: 84a2ade6eb6b1424aa16c22e699f4d6f, type: 3}
+  - {fileID: 8300000, guid: cc514bdde5bded94985ccea6bdb32d99, type: 3}
+  - {fileID: 8300000, guid: 0eabd65dd714af84791b5fbe9e8b8a21, type: 3}
+  - {fileID: 8300000, guid: 69558834d279c8d469f4643a26593cee, type: 3}
+  TerrainIndex: 0
+  Volume: 0.481
+  Pitch: -0.49
+  SteroPan: 0
+  SpatialBlend: 1

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55954dd9e1eacd43b0e7b70eeacca80, type: 3}
+  m_Name: SoundCard_Snow
+  m_EditorClassIdentifier: 
+  AudioGroup: SnowFootsteps
+  Clips:
+  - {fileID: 8300000, guid: 31ef6a82dbb521c4d981e4bd6af2d2a0, type: 3}
+  - {fileID: 8300000, guid: 0d6d6c5615100064cb421dd5dfbcbdeb, type: 3}
+  - {fileID: 8300000, guid: d4d3d13bd0c430c4ba48f7ef2161db53, type: 3}
+  - {fileID: 8300000, guid: 2da36a6a450455147907f90263a57254, type: 3}
+  - {fileID: 8300000, guid: d02cee31a348b304db2fe1517a08672c, type: 3}
+  - {fileID: 8300000, guid: 880cca807b3a10348a6d1af686003e45, type: 3}
+  - {fileID: 8300000, guid: fff65d9b90ebaf74f9b64f6d05c82f3c, type: 3}
+  - {fileID: 8300000, guid: bfae78dc7894faf48b1dcbb164e7c8ad, type: 3}
+  - {fileID: 8300000, guid: 73ef51a3bbb0ece4b804d2ba1651749f, type: 3}
+  - {fileID: 8300000, guid: 65f3d6f0dab36dc41b49613c25e150de, type: 3}
+  TerrainIndex: 0
+  Volume: 0.481
+  Pitch: -0.49
+  SteroPan: 0
+  SpatialBlend: 1
