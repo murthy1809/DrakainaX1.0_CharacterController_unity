@@ -42,15 +42,6 @@ MonoBehaviour:
     _Clip: {fileID: 7400086, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
-    _Events:
-      _NormalizedTimes:
-      - 1
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400086, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: NaN
   applyRootMotion: 1
   IsMoving: 2
   IsGrounded: 1

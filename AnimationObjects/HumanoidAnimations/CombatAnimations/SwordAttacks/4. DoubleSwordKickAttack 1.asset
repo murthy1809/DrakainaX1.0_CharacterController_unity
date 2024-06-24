@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b494b69dd65c1984db95dffe442d738d, type: 3}
-  m_Name: 3. TripleSwordAttack
+  m_Name: 4. DoubleSwordKickAttack 1
   m_EditorClassIdentifier: 
   name: 
   isCondition: 0
@@ -18,20 +18,11 @@ MonoBehaviour:
   - _FadeDuration: 0.25
     _Events:
       _NormalizedTimes:
-      - 0.5
+      - 1
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400044, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
+    _Clip: {fileID: 7400000, guid: 44599205d81405942b2a2876b87d4461, type: 3}
     _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
-    _Events:
-      _NormalizedTimes:
-      - 0.8
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400042, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
-    _Speed: NaN
     _NormalizedStartTime: NaN
   - _FadeDuration: 0.25
     _Events:
@@ -39,13 +30,31 @@ MonoBehaviour:
       - 1
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400100, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
+    _Clip: {fileID: 7400042, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes:
+      - 1
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400086, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes:
+      - 1
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400086, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
   applyRootMotion: 1
   IsMoving: 2
   IsGrounded: 1
-  IsModified: 2
+  IsModified: 1
   IsFalling: 0
   IsJumpPressed: 0
   IsCrouched: 0
@@ -58,6 +67,6 @@ MonoBehaviour:
   IsSheating: 0
   WeaponType: 2
   InputKey: 0
-  PrimaryTaps: 3
+  PrimaryTaps: 2
   _Priority: 0
   Sounds: []
