@@ -33,10 +33,10 @@ public class HumanoidController : ThirdPersonController
         base.Update();
         CrouchAndSlide();
         SpeedLogic();
-        humanStats.CurrentStamina(stamina);
-        humanStats.SetMaxStamina(maxStamina);
-        humanStats.SetMinStamina(minStamina);
-        Stamina();
+        //humanStats.CurrentStamina(stamina);
+        //humanStats.SetMaxStamina(maxStamina);
+        //humanStats.SetMinStamina(minStamina);
+        //Stamina();
         isSecondaryAttack = playerController.inputController.isSecondaryAttack;
         isobstacle = humanoidCollider.humanoidRay.isObstacle;
         isClimbing = humanoidCollider.isClimbing;     
