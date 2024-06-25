@@ -21,8 +21,7 @@ MonoBehaviour:
       - 1
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: -1192840080986744117, guid: b4a063cd93e6013468d39e95260514de,
-      type: 3}
+    _Clip: {fileID: -8607117077802292496, guid: 84feef98f50376d4187e5f68ea66d521, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
   applyRootMotion: 0

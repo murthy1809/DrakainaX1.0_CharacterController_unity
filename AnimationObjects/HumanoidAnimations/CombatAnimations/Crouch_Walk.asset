@@ -27,7 +27,7 @@ MonoBehaviour:
   applyRootMotion: 0
   IsMoving: 1
   IsGrounded: 1
-  IsModified: 0
+  IsModified: 2
   IsFalling: 0
   IsJumpPressed: 0
   IsCrouched: 1

@@ -25,7 +25,8 @@ public class InputController : MonoBehaviour
     public bool isHoverMode =false;
     public string directions;
     public bool isClimbing;
-   
+    private float pressDuration = 0f;
+
     // combat//
     public bool isPrimaryAttack,isWeaponDischarge;
     public bool isSecondaryAttack;
@@ -38,7 +39,8 @@ public class InputController : MonoBehaviour
     [SerializeField]  bool currentjump = true;
 
     private DragonController DC;
-
+    public bool isSliding = false;
+    public bool canSlideAgain = true;
 
     void Start()
     {
@@ -135,10 +137,12 @@ public class InputController : MonoBehaviour
         if (Input.GetButton("Action"))
         {
             isAction = true;
+           
         }
         else
         {
             isAction = false;
+            
         }
         if (Input.GetButton("SecondaryAttack"))
         {
@@ -204,6 +208,27 @@ public class InputController : MonoBehaviour
         else
         {
             isAction = false;
+        }
+
+        if (isAction && isMoving && isModified && !isSliding && canSlideAgain)
+        {
+            StartCoroutine(Slide());
+
+            // pressDuration += Time.deltaTime;
+        }
+        //if (isAction == false)
+        //{
+        //    canSlideAgain = true;
+        //}
+        IEnumerator Slide()
+        {
+            isSliding = true;
+            canSlideAgain = false;
+            Debug.Log("Start sliding");
+            yield return new WaitForSeconds(2);
+            isSliding = false;
+            Debug.Log("Stop sliding");
+
         }
         isHoverMode = false;
     }

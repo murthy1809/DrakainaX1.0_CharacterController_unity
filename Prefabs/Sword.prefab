@@ -4512,7 +4512,7 @@ GameObject:
   - component: {fileID: 8425679050955000460}
   - component: {fileID: 594555886886831295}
   m_Layer: 9
-  m_Name: Humanoid
+  m_Name: Sword
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
