@@ -35,8 +35,9 @@ MonoBehaviour:
   IsHoverMode: 0
   IsFlying: 0
   IsAction: 0
+  IsClimbing: 0
   IsPrimaryAttack: 0
-  IsSecondaryAttack: 0
+  IsSecondaryAttack: 2
   IsCombatMode: 0
   IsSheating: 0
   WeaponType: 0

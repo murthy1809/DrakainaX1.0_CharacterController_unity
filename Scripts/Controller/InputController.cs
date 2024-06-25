@@ -201,16 +201,20 @@ public class InputController : MonoBehaviour
         {
             isCrouch = !isCrouch;
         }
-        if (Input.GetButton("Action")  )
+        if (Input.GetButton("Action") && canSlideAgain)
         {
             isAction = true;
+        }
+        else if (Input.GetButton("Action") && !canSlideAgain)
+        {
+            isAction = false;
         }
         else
         {
             isAction = false;
         }
 
-        if (isAction && isMoving && isModified && !isSliding && canSlideAgain)
+        if (isAction && isMoving && isModified && !isSliding)
         {
             StartCoroutine(Slide());
 
@@ -221,14 +225,12 @@ public class InputController : MonoBehaviour
         //    canSlideAgain = true;
         //}
         IEnumerator Slide()
-        {
-            isSliding = true;
-            canSlideAgain = false;
-            Debug.Log("Start sliding");
+        {          
+            canSlideAgain = true;
             yield return new WaitForSeconds(2);
-            isSliding = false;
-            Debug.Log("Stop sliding");
-
+            canSlideAgain = false;
+            yield return new WaitForSeconds(2);
+            canSlideAgain = true;
         }
         isHoverMode = false;
     }
