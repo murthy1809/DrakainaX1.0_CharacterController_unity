@@ -67,6 +67,7 @@ public class HumanoidCombatAnimator : CombatAnimator
                     {
                         GetComponent<InputController>().isPrimaryAttack = false;
                         GetComponent<InputController>().isSheating = false;
+                        GetComponent<InputController>().isJumpPressed = false;
                     }
                     else
                     {
@@ -85,6 +86,7 @@ public class HumanoidCombatAnimator : CombatAnimator
                         {
                             GetComponent<InputController>().isPrimaryAttack = false;
                             GetComponent<InputController>().isSheating = false;
+                            GetComponent<InputController>().isJumpPressed = false;
                             j = 0;
                         }
                         else

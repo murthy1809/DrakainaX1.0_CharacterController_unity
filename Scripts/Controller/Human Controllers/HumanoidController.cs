@@ -33,10 +33,10 @@ public class HumanoidController : ThirdPersonController
         base.Update();
         CrouchAndSlide();
         SpeedLogic();
-        //humanStats.CurrentStamina(stamina);
-        //humanStats.SetMaxStamina(maxStamina);
-        //humanStats.SetMinStamina(minStamina);
-        //Stamina();
+        humanStats.CurrentStamina(stamina);
+        humanStats.SetMaxStamina(maxStamina);
+        humanStats.SetMinStamina(minStamina);
+        Stamina();
         isSecondaryAttack = playerController.inputController.isSecondaryAttack;
         isobstacle = humanoidCollider.humanoidRay.isObstacle;
         isClimbing = humanoidCollider.isClimbing;     
@@ -45,15 +45,31 @@ public class HumanoidController : ThirdPersonController
 
     protected override void Jump()
     {
-        if (isJumpPressed && isgrounded && isobstacle)
+        if (!GetComponent<InputController>().isCombatMode)
         {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -jumpnum * gravityValue);
+            if (isJumpPressed && isgrounded && isobstacle)
+            {
+                playerVelocity.y = Mathf.Sqrt(jumpHeight * -jumpnum * gravityValue);
 
+            }
+            else if (isJumpPressed && isgrounded && !isobstacle)
+            {
+                playerVelocity.y = Mathf.Sqrt(jumpHeight * -1 * gravityValue);
+            }
         }
-        else if (isJumpPressed && isgrounded && !isobstacle)
+        if (GetComponent<InputController>().isCombatMode)
         {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -1 * gravityValue);
+            if (isJumpPressed && isgrounded && isobstacle)
+            {
+                //playerVelocity.y = Mathf.Sqrt(jumpHeight * -jumpnum * gravityValue);
+
+            }
+            else if (isJumpPressed && isgrounded && !isobstacle)
+            {
+                //playerVelocity.y = Mathf.Sqrt(jumpHeight * -1 * gravityValue);
+            }
         }
+
     }
 
     protected override void GroundCheck()
@@ -131,7 +147,7 @@ public class HumanoidController : ThirdPersonController
         {          
             if (isSecondaryAttack)
             {
-                transform.rotation = Quaternion.Euler(transform.rotation.x, cam.eulerAngles.y, transform.rotation.z);
+               transform.rotation = Quaternion.Euler(transform.rotation.x, cam.eulerAngles.y, transform.rotation.z);
                 if (isMoving)
                 {                    
                     if (GetComponent<InputController>().isPrimaryAttack)

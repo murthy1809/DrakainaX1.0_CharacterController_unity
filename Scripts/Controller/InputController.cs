@@ -179,16 +179,34 @@ public class InputController : MonoBehaviour
     private void HumanMovement(Vector3 direction)
     {
         Moving(direction);
+        if (!isCombatMode)
+        {
+            if (Input.GetButtonDown("Jump") && onGround)
+            {
+                isJumpPressed = true;
+                isCrouch = false;
+            }
+            else if (!onGround)
+            {
+                isJumpPressed = false;
+            }
+        }
 
-        if (Input.GetButtonDown("Jump") && onGround)
+        if (isCombatMode)
         {
-            isJumpPressed = true;
-            isCrouch = false;
+            if (Input.GetButtonDown("Jump") )
+            {
+                isJumpPressed = true;
+                Debug.Log("combatjump");
+                isCrouch = false;
+            }
+            //else 
+            //{
+            //    isJumpPressed = false;
+            //}
         }
-        else if (!onGround)
-        {
-            isJumpPressed = false;
-        }
+
+
         if (Input.GetButton("Modified"))
         {
             isModified = true;
@@ -284,9 +302,10 @@ public class InputController : MonoBehaviour
     {
         if (MS.charcterIndicator == "human")
         {
-            if (isCombatMode && Input.GetButton("PrimaryAttack"))
+            if (isCombatMode && Input.GetButtonDown("PrimaryAttack"))
             {
                 isPrimaryAttack = true;
+                Debug.Log(isPrimaryAttack);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha1))

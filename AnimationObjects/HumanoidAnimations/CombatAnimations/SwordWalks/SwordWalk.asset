@@ -17,7 +17,8 @@ MonoBehaviour:
   AnimClips:
   - _FadeDuration: 0.25
     _Events:
-      _NormalizedTimes: []
+      _NormalizedTimes:
+      - 1
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 7400018, guid: 971c05bc2782d6a4ab995452aa8af824, type: 3}
@@ -33,6 +34,8 @@ MonoBehaviour:
   ObstacleDetect: 0
   IsHoverMode: 0
   IsFlying: 0
+  IsAction: 0
+  IsClimbing: 0
   IsPrimaryAttack: 0
   IsSecondaryAttack: 2
   IsCombatMode: 1

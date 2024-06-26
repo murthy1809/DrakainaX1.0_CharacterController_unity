@@ -12,6 +12,8 @@ public class VCam : MonoBehaviour
     public float TimeLeft;
     bool t;
 
+    private float currentValue;
+    private float timeElapsed;
     void Start()
     {
         
@@ -19,10 +21,13 @@ public class VCam : MonoBehaviour
 
     void Update()
     {
+
         if (ZoomLook == null || vZO == null)
         {
             return;
         }
+
+
 
         if (Input.GetButton("SecondaryAttack"))
         {
@@ -36,6 +41,7 @@ public class VCam : MonoBehaviour
             vCam.m_Orbits[2].m_Height = vZO.BottomRigHeight;
             vCam.m_Orbits[2].m_Radius = vZO.BotttomRigRadius;
             vCam.m_Lens.FieldOfView = vZO.VerticalFOV;
+            //currentValue = Mathf.Lerp(vCO.VerticalFOV, vZO.VerticalFOV, Time.deltaTime); 
             vCam.m_Heading.m_Bias = 0;
             vCam.m_YAxis.m_MaxSpeed = 20;
             vCam.m_XAxis.m_MaxSpeed = 300;
@@ -60,10 +66,8 @@ public class VCam : MonoBehaviour
             vCam.LookAt = LookAt;
             vCam.Follow = Follow;
 
-            vCam.m_Lens.FieldOfView = vCO.VerticalFOV;
+           vCam.m_Lens.FieldOfView = vCO.VerticalFOV;
             vCam.m_Heading.m_Bias = 0;
-
-
             TimerOn = true;
         }
 
