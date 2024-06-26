@@ -441,7 +441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527719019}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13820758, y: 0.000000017041256, z: -0.0000000023780522, w: 0.9904033}
+  m_LocalRotation: {x: 0.13820758, y: -0.000000017041254, z: 0.0000000023780522, w: 0.9904033}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1337,7 +1337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529835675}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14253858, y: -0.000000008515345, z: 0.0000000012262865, w: 0.98978925}
+  m_LocalRotation: {x: 0.14253858, y: 0.000000008515345, z: -0.0000000012262865, w: 0.98978925}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2269,11 +2269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017041257
+      value: -0.000000017041256
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000023780526
+      value: 0.0000000023780524
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3068,6 +3068,7 @@ MonoBehaviour:
   freeLookTime: 0
   TimerOn: 0
   TimeLeft: 0
+  timeElapsed: 10
 --- !u!114 &1991193561302889000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22166,7 +22167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504953a84b8ac4d4b9f722d7798eea1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vCam: {fileID: 0}
+  vCam: {fileID: 1178896012}
   vCO: {fileID: 11400000, guid: 4c8699ad246e81d4e9604f769bb69eea, type: 2}
   vZO: {fileID: 11400000, guid: 1176d34754bbfbc46ab151023ae787f9, type: 2}
   LookAt: {fileID: 8403933873055569834}
@@ -22176,6 +22177,7 @@ MonoBehaviour:
   freeLookTime: 5
   TimerOn: 0
   TimeLeft: 1
+  timeElapsed: 10
 --- !u!1 &8403933873055861276
 GameObject:
   m_ObjectHideFlags: 0

@@ -197,7 +197,6 @@ public class InputController : MonoBehaviour
             if (Input.GetButtonDown("Jump") )
             {
                 isJumpPressed = true;
-                Debug.Log("combatjump");
                 isCrouch = false;
             }
             //else 
@@ -305,20 +304,20 @@ public class InputController : MonoBehaviour
             if (isCombatMode && Input.GetButtonDown("PrimaryAttack"))
             {
                 isPrimaryAttack = true;
-                Debug.Log(isPrimaryAttack);
             }
-
+            if (fistEquip || swordEquip)
+            {
+                isCombatMode = true;
+            }
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
+                
                 fistEquip = !fistEquip;
                 isCombatMode = !isCombatMode;
                 swordEquip = false;
                 isCrouch = false;
             }
-            if( fistEquip || swordEquip)
-            {
-                isCombatMode = true;
-            }
+
             if(fistEquip && Input.GetKeyDown(KeyCode.Alpha2))
             {
                 fistEquip = false;
@@ -335,6 +334,10 @@ public class InputController : MonoBehaviour
                 swordEquip = !swordEquip;
             }
 
+            //if (isSheating)
+            //{
+            //    fistEquip = false;
+            //}
 
             if (Input.GetButton("SecondaryAttack"))
             {
