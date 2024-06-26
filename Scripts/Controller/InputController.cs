@@ -326,7 +326,7 @@ public class InputController : MonoBehaviour
                 isCombatMode = true;
                 swordEquip = true;
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
+           else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 isCombatMode = !isCombatMode;
                 isSheating = !isSheating;
