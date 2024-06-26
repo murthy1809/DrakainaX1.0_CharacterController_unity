@@ -25,7 +25,7 @@ MonoBehaviour:
     _NormalizedStartTime: NaN
   applyRootMotion: 0
   IsMoving: 2
-  IsGrounded: 2
+  IsGrounded: 1
   IsModified: 2
   IsFalling: 0
   IsJumpPressed: 0

@@ -3183,6 +3183,7 @@ MonoBehaviour:
   playerController: {fileID: 1991193561302889000}
   weaponType: 
   controller: {fileID: 1991193561302889000}
+  inputController: {fileID: 1991193561302889003}
   clicks: 
   singleHandSword: {fileID: 1876438475232504595}
 --- !u!114 &1991193561302889009

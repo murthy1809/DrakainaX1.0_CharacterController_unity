@@ -5,6 +5,7 @@ using UnityEngine;
 public class HumanoidCombatController : CombatController
 {
     [SerializeField] internal PlayerController controller;
+    [SerializeField] internal InputController inputController;
     float ClickDelay = 0.2f;
     int _currClicks;
     float _clickTime;
@@ -33,12 +34,12 @@ public class HumanoidCombatController : CombatController
 
     private void SelectWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (inputController.fistEquip)
         {
             weaponType = "Fists";
             singleHandSword.SetActive(false);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (inputController.swordEquip)
         {
             weaponType = "SingleHandedSword";
         }

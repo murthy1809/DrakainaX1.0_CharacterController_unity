@@ -307,39 +307,39 @@ public class InputController : MonoBehaviour
             }
             if (fistEquip || swordEquip)
             {
-                isCombatMode = true;
+                isCrouch = false;
             }
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                
-                fistEquip = !fistEquip;
-                isCombatMode = !isCombatMode;
-                swordEquip = false;
-                isCrouch = false;
+                if (!swordEquip) // !!bowEquip && !!magicEqiup
+                {
+                    fistEquip = !fistEquip;
+                    isCombatMode = !isCombatMode;
+                }
+             
             }
-
-            if(fistEquip && Input.GetKeyDown(KeyCode.Alpha2))
+            if (Input.GetKeyDown(KeyCode.Alpha2))
             {
+
                 fistEquip = false;
-                isSheating = true;
-                isCrouch = false;
                 isCombatMode = true;
+                isSheating = true;
                 swordEquip = true;
             }
-           else if (Input.GetKeyDown(KeyCode.Alpha2))
+
+            if (Input.GetButton("Holster"))
             {
-                isCombatMode = !isCombatMode;
-                isSheating = !isSheating;
-                isCrouch = false;
-                swordEquip = !swordEquip;
+                isCombatMode = false;
+                isSheating = true;
+                swordEquip = false;
             }
 
-            //if (isSheating)
-            //{
-            //    fistEquip = false;
-            //}
+                //if (isSheating)
+                //{
+                //    fistEquip = false;
+                //}
 
-            if (Input.GetButton("SecondaryAttack"))
+                if (Input.GetButton("SecondaryAttack"))
             {
                 isSecondaryAttack = true;
             }

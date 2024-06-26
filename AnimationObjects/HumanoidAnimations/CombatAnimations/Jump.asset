@@ -17,7 +17,8 @@ MonoBehaviour:
   AnimClips:
   - _FadeDuration: 0.25
     _Events:
-      _NormalizedTimes: []
+      _NormalizedTimes:
+      - 1
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 7400000, guid: 067cc188e25b78b4a940a9fa67cd6ee7, type: 3}
