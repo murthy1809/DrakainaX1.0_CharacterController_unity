@@ -12,8 +12,8 @@ public class VCam : MonoBehaviour
     public float TimeLeft;
     bool t;
 
-    private float currentValue;
-    private float timeElapsed;
+    private float currentValue = 45;
+    public float timeElapsed =10 ;
     void Start()
     {
         
@@ -40,8 +40,7 @@ public class VCam : MonoBehaviour
             vCam.m_Orbits[1].m_Radius = vZO.MiddleRigRadius;
             vCam.m_Orbits[2].m_Height = vZO.BottomRigHeight;
             vCam.m_Orbits[2].m_Radius = vZO.BotttomRigRadius;
-            vCam.m_Lens.FieldOfView = vZO.VerticalFOV;
-            //currentValue = Mathf.Lerp(vCO.VerticalFOV, vZO.VerticalFOV, Time.deltaTime); 
+            //vCam.m_Lens.FieldOfView = vZO.VerticalFOV;
             vCam.m_Heading.m_Bias = 0;
             vCam.m_YAxis.m_MaxSpeed = 20;
             vCam.m_XAxis.m_MaxSpeed = 300;
@@ -49,7 +48,12 @@ public class VCam : MonoBehaviour
             TimeLeft = 1;
             TimerOn = false;
 
-
+            //currentValue = Mathf.Lerp(vCO.VerticalFOV, vZO.VerticalFOV, Time.deltaTime);
+            if (vCam.m_Lens.FieldOfView > vZO.VerticalFOV)
+            {
+                vCam.m_Lens.FieldOfView -= timeElapsed * Time.deltaTime;
+                //currentValue = Mathf.Max(currentValue, 30); // Clamp to the target value
+            }
 
         }
         else /*if (Input.GetKeyDown(KeyCode.LeftAlt))*/
