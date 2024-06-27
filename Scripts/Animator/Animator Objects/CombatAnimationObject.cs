@@ -465,6 +465,10 @@ public class CombatAnimationObject : ScriptableObject
             {
                 weaponType = "SingleHandedSword";
             }
+            else if (WeaponType == Weapons.Bow)
+            {
+                weaponType = "Bow";
+            }
             else if (WeaponType == Weapons.BreatheFire)
             {
                 weaponType = "BreatheFire";
@@ -580,7 +584,7 @@ public class CombatAnimationObject : ScriptableObject
 
     public enum Weapons
     {
-        None,Fists,SingleHandedSword,BreatheFire,FireBall, DragonHandMelee
+        None,Fists,SingleHandedSword,Bow,BreatheFire,FireBall, DragonHandMelee
     }
 
     public enum Directions

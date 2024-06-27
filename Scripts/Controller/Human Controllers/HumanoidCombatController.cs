@@ -43,6 +43,10 @@ public class HumanoidCombatController : CombatController
         {
             weaponType = "SingleHandedSword";
         }
+        else if (inputController.bowEquip)
+        {
+            weaponType = "Bow";
+        }
     }
 
     private void WeaponDraw()

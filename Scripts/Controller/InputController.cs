@@ -32,7 +32,7 @@ public class InputController : MonoBehaviour
     public bool isSecondaryAttack;
     public bool isCombatMode = false;
     public bool isSheating;
-    public bool fistEquip , swordEquip;
+    public bool fistEquip , swordEquip, bowEquip;
     [SerializeField] bool previousjump;
 
 
@@ -327,11 +327,21 @@ public class InputController : MonoBehaviour
                 swordEquip = true;
             }
 
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                fistEquip = false;
+                swordEquip = false;
+                isCombatMode = true;
+                isSheating = true;
+                bowEquip = true;
+            }
+
             if (Input.GetButton("Holster"))
             {
                 isCombatMode = false;
                 isSheating = true;
                 swordEquip = false;
+                bowEquip = false;
             }
 
                 //if (isSheating)
