@@ -65,6 +65,7 @@ public class HumanoidCombatAnimator : CombatAnimator
                     if (_Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]).NormalizedTime >= 
                         _Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]).NormalizedEndTime)
                     {
+                        //
                         GetComponent<InputController>().isPrimaryAttack = false;
                         GetComponent<InputController>().isSheating = false;
                         GetComponent<InputController>().isJumpPressed = false;
