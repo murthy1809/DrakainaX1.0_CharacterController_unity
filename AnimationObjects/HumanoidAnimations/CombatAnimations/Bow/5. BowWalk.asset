@@ -20,11 +20,11 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: -203655887218126122, guid: 345794828eba37742aae41cb0246a129, type: 3}
+    _Clip: {fileID: -203655887218126122, guid: c62389e97d022e14683a4e4139f689d9, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
   applyRootMotion: 0
-  IsMoving: 2
+  IsMoving: 1
   IsGrounded: 1
   IsModified: 2
   IsFalling: 0
@@ -36,9 +36,9 @@ MonoBehaviour:
   IsAction: 0
   IsClimbing: 0
   IsPrimaryAttack: 0
-  IsSecondaryAttack: 2
+  IsSecondaryAttack: 0
   IsCombatMode: 1
-  IsSheating: 1
+  IsSheating: 0
   WeaponType: 3
   InputKey: 0
   PrimaryTaps: 0
