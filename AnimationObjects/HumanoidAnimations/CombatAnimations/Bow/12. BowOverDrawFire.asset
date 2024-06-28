@@ -41,6 +41,6 @@ MonoBehaviour:
   IsSheating: 0
   WeaponType: 3
   InputKey: 0
-  PrimaryTaps: 0
+  PrimaryTaps: 1
   _Priority: 0
   Sounds: []

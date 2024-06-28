@@ -441,7 +441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527719019}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13820758, y: 0.000000017041254, z: -0.0000000023780522, w: 0.9904033}
+  m_LocalRotation: {x: 0.13820758, y: 0.000000017041257, z: -0.0000000023780524, w: 0.9904033}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2269,11 +2269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017041256
+      value: 0.000000017041259
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000023780524
+      value: -0.0000000023780529
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3185,6 +3185,7 @@ MonoBehaviour:
   weaponType: 
   controller: {fileID: 1991193561302889000}
   inputController: {fileID: 1991193561302889003}
+  ClickDelay: 0.2
   clicks: 
   singleHandSword: {fileID: 1876438475232504595}
 --- !u!114 &1991193561302889009
@@ -3338,6 +3339,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c7aa03a6f11bc54ab0616746086378e, type: 2}
   - {fileID: 11400000, guid: acfe2e454a211f94e910c8a920c15d6f, type: 2}
   - {fileID: 11400000, guid: 8b1c6ee2df7854340927a8687f5de652, type: 2}
+  - {fileID: 11400000, guid: 60da15868a5163e429e597fa738de061, type: 2}
+  - {fileID: 11400000, guid: 1d0fdc997d1f1794081d23744b391ace, type: 2}
   InvoluntaryAnim: []
 --- !u!1 &1991193561302889055
 GameObject:

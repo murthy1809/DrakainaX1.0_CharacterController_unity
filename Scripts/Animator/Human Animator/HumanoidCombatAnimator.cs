@@ -62,8 +62,8 @@ public class HumanoidCombatAnimator : CombatAnimator
                 {
                     j = 0;
 
-                    if (_Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]).NormalizedTime >= 
-                        _Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]).NormalizedEndTime)
+                    if (_Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]).NormalizedTime >= 0.8f
+                        /*_Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]).NormalizedEndTime*/)
                     {
                         //
                         GetComponent<InputController>().isPrimaryAttack = false;
@@ -78,8 +78,8 @@ public class HumanoidCombatAnimator : CombatAnimator
                 else if (PAnimator.CombatAnim[i].AnimClips.Count > 1)
                 {
 
-                    if (_Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]).NormalizedTime >=
-                        _Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]).NormalizedEndTime)
+                    if (_Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]).NormalizedTime >= 0.8f
+                        /*_Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]).NormalizedEndTime*/)
                     {
                        // _Animancer.Play(PAnimator.CombatAnim[i].AnimClips[j]);
                        

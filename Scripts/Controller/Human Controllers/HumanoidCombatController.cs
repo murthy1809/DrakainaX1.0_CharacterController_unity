@@ -6,7 +6,7 @@ public class HumanoidCombatController : CombatController
 {
     [SerializeField] internal PlayerController controller;
     [SerializeField] internal InputController inputController;
-    float ClickDelay = 0.2f;
+    [SerializeField] float ClickDelay = 0.2f;
     int _currClicks;
     float _clickTime;
     string button;
@@ -129,8 +129,31 @@ public class HumanoidCombatController : CombatController
                 clicks = "None";
             }
         }
+        if (weaponType == "Bow")
+        {
+            if (amountOfClicks == 1)
+            {
+                clicks = "Single";
+            }
+            else if (amountOfClicks == 2)
+            {
+                clicks = "Double";
+            }
+            //else if (amountOfClicks == 3)
+            //{
+            //    clicks = "Triple";
+            //}
+            //else if (amountOfClicks > 3)
+            //{
+            //    clicks = "Single";
+            //}
+            else
+            {
+                clicks = "None";
+            }
+        }
 
-        if(weaponType == "Fists")
+        if (weaponType == "Fists")
         {
             if (amountOfClicks == 1)
             {

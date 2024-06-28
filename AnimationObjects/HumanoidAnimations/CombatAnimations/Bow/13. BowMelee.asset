@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b494b69dd65c1984db95dffe442d738d, type: 3}
-  m_Name: 13. BowFire
+  m_Name: 13. BowMelee
   m_EditorClassIdentifier: 
   name: 
   isCondition: 0
@@ -20,7 +20,7 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: -203655887218126122, guid: 4741cb1ac673ced4f9e4a0fed1408c93, type: 3}
+    _Clip: {fileID: -203655887218126122, guid: 9e85c2226ed77fd4a8ffe0439b6c8454, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
   applyRootMotion: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
   IsAction: 0
   IsClimbing: 0
   IsPrimaryAttack: 1
-  IsSecondaryAttack: 1
+  IsSecondaryAttack: 0
   IsCombatMode: 1
   IsSheating: 0
   WeaponType: 3
