@@ -441,7 +441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527719019}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13820758, y: 0.000000017041257, z: -0.0000000023780524, w: 0.9904033}
+  m_LocalRotation: {x: 0.13820758, y: -0.000000017041256, z: 0.0000000023780522, w: 0.9904033}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2269,11 +2269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017041259
+      value: -0.000000017041257
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000023780529
+      value: 0.0000000023780526
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3117,7 +3117,7 @@ MonoBehaviour:
   playerController: {fileID: 1991193561302889000}
   MS: {fileID: 1991193561443760025}
   isMoving: 0
-  isForward: 0
+  isForward: 1
   isBackward: 0
   isLeft: 0
   isRight: 0
@@ -3139,6 +3139,8 @@ MonoBehaviour:
   isSecondaryAttack: 0
   isCombatMode: 0
   isSheating: 0
+  isloadingArrow: 0
+  arrowLoaded: 0
   fistEquip: 0
   swordEquip: 0
   bowEquip: 0
@@ -3336,11 +3338,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a192e9007cdd1624ea53efca0c843036, type: 2}
   - {fileID: 11400000, guid: fa12fcfb2a9529544b91c5e8d52f59f8, type: 2}
   - {fileID: 11400000, guid: f02746df13754764d97254d17cdff2d2, type: 2}
-  - {fileID: 11400000, guid: 9c7aa03a6f11bc54ab0616746086378e, type: 2}
-  - {fileID: 11400000, guid: acfe2e454a211f94e910c8a920c15d6f, type: 2}
   - {fileID: 11400000, guid: 8b1c6ee2df7854340927a8687f5de652, type: 2}
-  - {fileID: 11400000, guid: 60da15868a5163e429e597fa738de061, type: 2}
   - {fileID: 11400000, guid: 1d0fdc997d1f1794081d23744b391ace, type: 2}
+  - {fileID: 11400000, guid: 04bfa5309071fb54895f602a31503ce3, type: 2}
+  - {fileID: 11400000, guid: 688449f034658804facfb6c82d2d652d, type: 2}
   InvoluntaryAnim: []
 --- !u!1 &1991193561302889055
 GameObject:
@@ -16357,7 +16358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991193562540936427}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000059604602, y: 0.17807621, z: -0.000000074505756, w: 0.98401666}
+  m_LocalRotation: {x: 0.000000059604606, y: 0.17807622, z: -0.00000007450576, w: 0.9840167}
   m_LocalPosition: {x: -0.0862886, y: -0.00000003126553, z: 0.02867837}
   m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
   m_ConstrainProportionsScale: 0
@@ -16951,7 +16952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991193562720729921}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22821333, y: 0.3229718, z: 0.15515137, w: -0.9052822}
+  m_LocalRotation: {x: 0.22821334, y: 0.32297182, z: 0.15515138, w: -0.90528226}
   m_LocalPosition: {x: -0.08602991, y: 0.035095237, z: -0.008257587}
   m_LocalScale: {x: 0.99999994, y: 1.0000002, z: 0.9999997}
   m_ConstrainProportionsScale: 0
@@ -19858,6 +19859,8 @@ MonoBehaviour:
   isSecondaryAttack: 0
   isCombatMode: 0
   isSheating: 0
+  isloadingArrow: 0
+  arrowLoaded: 0
   fistEquip: 0
   swordEquip: 0
   bowEquip: 0

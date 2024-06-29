@@ -30,6 +30,7 @@ public class CombatAnimationObject : ScriptableObject
     private bool isPrimaryAttack;
     internal bool isSecondaryAttack;
     private bool isCombatMode;
+    private bool loadArrow;
     private string weaponType;
     private bool isSheating;
     private string directions;
@@ -453,6 +454,31 @@ public class CombatAnimationObject : ScriptableObject
         }
     }
 
+    public bool ISLOADARROW
+    {
+        get
+        {
+            if (IsLoadingArrow == Options.YES)
+            {
+                loadArrow = true;
+
+            }
+            else if (IsLoadingArrow == Options.NO)
+            {
+                loadArrow = false;
+            }
+            else
+            {
+                loadArrow = false;
+            }
+            return loadArrow;
+        }
+        set
+        {
+            isSheating = value;
+        }
+    }
+
     public string WEAPONTYPE 
     {
         get
@@ -571,6 +597,7 @@ public class CombatAnimationObject : ScriptableObject
     public Options IsSecondaryAttack;
     public Options IsCombatMode;
     public Options IsSheating;
+    public Options IsLoadingArrow;
     public Weapons WeaponType;
     public Directions InputKey;
     public Taps PrimaryTaps;
@@ -594,7 +621,7 @@ public class CombatAnimationObject : ScriptableObject
 
     public enum Taps
     {
-        None,Single,Double,Triple
+        None,Single,Double,Triple,PressDown
     }
 
     public Priority _Priority;

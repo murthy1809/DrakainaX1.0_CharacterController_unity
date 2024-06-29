@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b494b69dd65c1984db95dffe442d738d, type: 3}
-  m_Name: 13. BowMelee
+  m_Name: LoadArrow
   m_EditorClassIdentifier: 
   name: 
   isCondition: 0
@@ -20,11 +20,11 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: -203655887218126122, guid: 9e85c2226ed77fd4a8ffe0439b6c8454, type: 3}
+    _Clip: {fileID: -203655887218126122, guid: 6dd2d65189c7ffd4a848f174bb0fb93a, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
   applyRootMotion: 0
-  IsMoving: 0
+  IsMoving: 2
   IsGrounded: 1
   IsModified: 0
   IsFalling: 0
@@ -36,10 +36,10 @@ MonoBehaviour:
   IsAction: 0
   IsClimbing: 0
   IsPrimaryAttack: 1
-  IsSecondaryAttack: 0
+  IsSecondaryAttack: 1
   IsCombatMode: 1
   IsSheating: 0
-  IsLoadArrow: 0
+  IsLoadingArrow: 1
   WeaponType: 3
   InputKey: 0
   PrimaryTaps: 0

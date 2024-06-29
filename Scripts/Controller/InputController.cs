@@ -31,7 +31,8 @@ public class InputController : MonoBehaviour
     public bool isPrimaryAttack,isWeaponDischarge;
     public bool isSecondaryAttack;
     public bool isCombatMode = false;
-    public bool isSheating;
+    public bool isSheating,isloadingArrow;
+    public bool arrowLoaded;
     public bool fistEquip , swordEquip, bowEquip;
     [SerializeField] bool previousjump;
 
@@ -303,7 +304,37 @@ public class InputController : MonoBehaviour
         {
             if (isCombatMode && Input.GetButtonDown("PrimaryAttack"))
             {
-                isPrimaryAttack = true;
+                if (bowEquip)
+                {
+                    if (Input.GetButton("PrimaryAttack"))
+                    {
+                        Debug.Log("LoadArrow");
+                        isPrimaryAttack = true;
+                        isloadingArrow = true;
+                        arrowLoaded = true;
+                    }
+                    if (arrowLoaded)
+                    {
+                        if (Input.GetButton("PrimaryAttack"))
+                        {
+                            isPrimaryAttack = true;
+                            Debug.Log("DrawArrow");
+                            isloadingArrow = true;
+                        }
+                    }
+
+                    if (Input.GetButtonUp("PrimaryAttack"))
+                    {
+                        Debug.Log("ShootArrow");
+                        isPrimaryAttack = true;
+                        isloadingArrow = false;
+                        arrowLoaded = false;
+                    }
+                }
+                else
+                {
+                    isPrimaryAttack = true;
+                }
             }
             if (fistEquip || swordEquip)
             {
@@ -320,7 +351,6 @@ public class InputController : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-
                 fistEquip = false;
                 isCombatMode = true;
                 isSheating = true;
@@ -333,7 +363,7 @@ public class InputController : MonoBehaviour
                 swordEquip = false;
                 isCombatMode = true;
                 isSheating = true;
-                bowEquip = true;
+                bowEquip = true;               
             }
 
             if (Input.GetButton("Holster"))
@@ -349,7 +379,7 @@ public class InputController : MonoBehaviour
                 //    fistEquip = false;
                 //}
 
-                if (Input.GetButton("SecondaryAttack"))
+            if (Input.GetButton("SecondaryAttack"))
             {
                 isSecondaryAttack = true;
             }

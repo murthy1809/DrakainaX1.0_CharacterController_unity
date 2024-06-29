@@ -1,80 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickTest : MonoBehaviour
+public class MouseClickDetector : MonoBehaviour
 {
-    [SerializeField] float ClickDelay = 0.2f;
-    [SerializeField] bool LoadArrow;
-    int _currClicks;
-    float _clickTime;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float clickTime = 0.0f;
+    private float clickDelay = 0.2f;
+    private int clickCount = 0;
 
-    // Update is called once per frame
     void Update()
     {
-        // CheckForClicks("PrimaryAttack", 0.5f);
-        if (Input.GetButtonDown("PrimaryAttack"))
+        // Detect mouse button pressed down
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("LoadArrow");
-            LoadArrow = true;
+            clickCount++;
+            clickTime = Time.time;
+            Debug.Log("Mouse button pressed down");
         }
-        if (LoadArrow )
+
+        // Detect mouse button held down
+        if (Input.GetMouseButton(0))
         {
-            if (Input.GetButton("PrimaryAttack"))
+            Debug.Log("Mouse button is being held down");
+        }
+
+        // Detect mouse button released
+        if (Input.GetMouseButtonUp(0))
+        {
+            Debug.Log("Mouse button released");
+            if (Time.time - clickTime < clickDelay)
             {
-                Debug.Log("DrawArrow");
-            }          
-
-        }
-
-        if (Input.GetButtonUp("PrimaryAttack"))
-        {
-            Debug.Log("ShootArrow");
-            LoadArrow = false;
+                Invoke("CheckClicks", clickDelay);
+            }
         }
     }
 
-    private void CheckForClicks(string buttonName, float clickDelay)
+    void CheckClicks()
     {
-
-        if (Input.GetButtonDown(buttonName))
+        if (clickCount == 1)
         {
-            _currClicks++;
-            _clickTime = 0;
-            
+            Debug.Log("Single click detected");
         }
-
-        if (_currClicks == 0) return;
-
-
-        if (_clickTime < ClickDelay)
+        else if (clickCount == 2)
         {
-            _clickTime += Time.deltaTime;
-            return;
+            Debug.Log("Double click detected");
         }
-
-
-        HandleClicks(_currClicks);
-        _currClicks = 0;
-        _clickTime = 0;
-
+        else if (clickCount == 3)
+        {
+            Debug.Log("Triple click detected");
+        }
+        clickCount = 0;
     }
-
-    private void HandleClicks(int amountOfClicks)
-    {
-        if (amountOfClicks == 1)
-        {
-            Debug.Log("single");
-        }
-        if (amountOfClicks == 2)
-        {
-            Debug.Log("double");
-        }
-    }
-   
 }

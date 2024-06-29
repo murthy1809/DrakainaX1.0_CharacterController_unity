@@ -6,7 +6,7 @@ public class HumanoidCombatAnimator : CombatAnimator
 {
     // [SerializeField] internal HumanoidColliderManger humanoidColliderManger;
     // [SerializeField] internal PlayerAnimator playerAnimator;
-    private bool isClimbing, isAction;
+    private bool isClimbing, isAction, loadArrow;
     private string primaryTaps;
     internal string weaponType;
     public string eventFunctionName;
@@ -27,6 +27,7 @@ public class HumanoidCombatAnimator : CombatAnimator
         primaryTaps = GetComponent<HumanoidCombatController>().clicks;
         weaponType = GetComponent<HumanoidCombatController>().weaponType;
         isAction = PAnimator.PlayerScript.playerContoller.inputController.isAction;
+        loadArrow = PAnimator.PlayerScript.playerContoller.inputController.isloadingArrow;
 
     }
 
@@ -48,6 +49,7 @@ public class HumanoidCombatAnimator : CombatAnimator
                 isCombatMode == PAnimator.CombatAnim[i].ISCOMBATMODE &&
                 weaponType == PAnimator.CombatAnim[i].WEAPONTYPE &&
                 isSheating == PAnimator.CombatAnim[i].ISSHEATING &&
+                loadArrow == PAnimator.CombatAnim[i].ISLOADARROW &&
                 isDirection == PAnimator.CombatAnim[i].DIRECTIONS &&
                 weaponType == PAnimator.CombatAnim[i].WEAPONTYPE &&
                 isSecondaryAttack == PAnimator.CombatAnim[i].ISSECONDARYATTACK &&
@@ -69,6 +71,7 @@ public class HumanoidCombatAnimator : CombatAnimator
                         GetComponent<InputController>().isPrimaryAttack = false;
                         GetComponent<InputController>().isSheating = false;
                         GetComponent<InputController>().isJumpPressed = false;
+                        GetComponent<InputController>().isloadingArrow = false;
                     }
                     else
                     {
@@ -88,6 +91,7 @@ public class HumanoidCombatAnimator : CombatAnimator
                             GetComponent<InputController>().isPrimaryAttack = false;
                             GetComponent<InputController>().isSheating = false;
                             GetComponent<InputController>().isJumpPressed = false;
+                            GetComponent<InputController>().isloadingArrow = false;
                             j = 0;
                         }
                         else
