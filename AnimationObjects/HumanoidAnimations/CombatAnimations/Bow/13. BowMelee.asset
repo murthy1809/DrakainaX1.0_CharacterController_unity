@@ -26,7 +26,7 @@ MonoBehaviour:
   applyRootMotion: 0
   IsMoving: 0
   IsGrounded: 1
-  IsModified: 0
+  IsModified: 1
   IsFalling: 0
   IsJumpPressed: 0
   IsCrouched: 0
@@ -35,11 +35,10 @@ MonoBehaviour:
   IsFlying: 0
   IsAction: 0
   IsClimbing: 0
-  IsPrimaryAttack: 1
-  IsSecondaryAttack: 0
+  IsPrimaryAttack: 2
+  IsSecondaryAttack: 2
   IsCombatMode: 1
   IsSheating: 0
-  IsLoadArrow: 0
   WeaponType: 3
   InputKey: 0
   PrimaryTaps: 0

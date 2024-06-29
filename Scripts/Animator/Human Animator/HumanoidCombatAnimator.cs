@@ -49,7 +49,7 @@ public class HumanoidCombatAnimator : CombatAnimator
                 isCombatMode == PAnimator.CombatAnim[i].ISCOMBATMODE &&
                 weaponType == PAnimator.CombatAnim[i].WEAPONTYPE &&
                 isSheating == PAnimator.CombatAnim[i].ISSHEATING &&
-                loadArrow == PAnimator.CombatAnim[i].ISLOADARROW &&
+                //loadArrow == PAnimator.CombatAnim[i].ISLOADARROW &&
                 isDirection == PAnimator.CombatAnim[i].DIRECTIONS &&
                 weaponType == PAnimator.CombatAnim[i].WEAPONTYPE &&
                 isSecondaryAttack == PAnimator.CombatAnim[i].ISSECONDARYATTACK &&

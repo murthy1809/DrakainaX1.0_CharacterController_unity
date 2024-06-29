@@ -35,7 +35,7 @@ MonoBehaviour:
   IsFlying: 0
   IsAction: 0
   IsClimbing: 0
-  IsPrimaryAttack: 0
+  IsPrimaryAttack: 2
   IsSecondaryAttack: 2
   IsCombatMode: 1
   IsSheating: 0

@@ -454,30 +454,30 @@ public class CombatAnimationObject : ScriptableObject
         }
     }
 
-    public bool ISLOADARROW
-    {
-        get
-        {
-            if (IsLoadingArrow == Options.YES)
-            {
-                loadArrow = true;
+    //public bool ISLOADARROW
+    //{
+    //    get
+    //    {
+    //        if (IsLoadingArrow == Options.YES)
+    //        {
+    //            loadArrow = true;
 
-            }
-            else if (IsLoadingArrow == Options.NO)
-            {
-                loadArrow = false;
-            }
-            else
-            {
-                loadArrow = false;
-            }
-            return loadArrow;
-        }
-        set
-        {
-            isSheating = value;
-        }
-    }
+    //        }
+    //        else if (IsLoadingArrow == Options.NO)
+    //        {
+    //            loadArrow = false;
+    //        }
+    //        else
+    //        {
+    //            loadArrow = false;
+    //        }
+    //        return loadArrow;
+    //    }
+    //    set
+    //    {
+    //        isSheating = value;
+    //    }
+    //}
 
     public string WEAPONTYPE 
     {
@@ -605,7 +605,7 @@ public class CombatAnimationObject : ScriptableObject
     public Options IsSecondaryAttack;
     public Options IsCombatMode;
     public Options IsSheating;
-    public Options IsLoadingArrow;
+    //public Options IsLoadingArrow;
     public Weapons WeaponType;
     public Directions InputKey;
     public Taps PrimaryTaps;
