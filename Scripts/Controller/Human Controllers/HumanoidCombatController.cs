@@ -122,7 +122,7 @@ public class HumanoidCombatController : CombatController
         //{
         //    clicks = "Triple";
         //    Debug.Log("triple");
-        //}
+        //}##
         clickCount = 0;
     }
 }
