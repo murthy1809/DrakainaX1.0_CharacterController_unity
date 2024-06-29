@@ -441,7 +441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527719019}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13820758, y: -0.000000017041257, z: 0.0000000023780524, w: 0.9904033}
+  m_LocalRotation: {x: 0.13820758, y: 0.000000017041256, z: -0.0000000023780522, w: 0.9904033}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1337,7 +1337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529835675}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14253858, y: 0.000000008515345, z: -0.0000000012262865, w: 0.98978925}
+  m_LocalRotation: {x: 0.14253858, y: -0.000000008515345, z: 0.0000000012262865, w: 0.98978925}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2269,11 +2269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017041259
+      value: 0.000000017041257
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000023780529
+      value: -0.0000000023780526
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3187,6 +3187,9 @@ MonoBehaviour:
   weaponType: 
   controller: {fileID: 1991193561302889000}
   inputController: {fileID: 1991193561302889003}
+  downTimeRight: 0
+  keydowntime: 0
+  bowtimesetting: 1
   clickDelay: 0.2
   clicks: 
   singleHandSword: {fileID: 1876438475232504595}

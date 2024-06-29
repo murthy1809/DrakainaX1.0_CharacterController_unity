@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b494b69dd65c1984db95dffe442d738d, type: 3}
   m_Name: AimArrow
   m_EditorClassIdentifier: 
-  name: 
+  name: AimArrow
   isCondition: 0
   AnimClips:
   - _FadeDuration: 0.25
@@ -39,7 +39,6 @@ MonoBehaviour:
   IsSecondaryAttack: 1
   IsCombatMode: 1
   IsSheating: 0
-  IsLoadingArrow: 0
   WeaponType: 3
   InputKey: 0
   PrimaryTaps: 0

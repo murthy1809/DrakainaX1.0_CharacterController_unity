@@ -6,10 +6,17 @@ public class HumanoidCombatController : CombatController
 {
     [SerializeField] internal PlayerController controller;
     [SerializeField] internal InputController inputController;
+    [SerializeField] internal float downTimeRight;
+    [SerializeField] internal float keydowntime;
+    [SerializeField] float bowtimesetting;
+    private bool butOnlyOnce = false;
     private float clickTime = 0.0f;
     [SerializeField] float clickDelay = 0.2f;
     private int clickCount = 0;   
     public string clicks;
+    int _currClicks;
+    float _clickTime;
+    float ClickDelay = 0.2f;
     public GameObject singleHandSword;
     [SerializeField] int bowCount = 10;
 
@@ -26,10 +33,19 @@ public class HumanoidCombatController : CombatController
         SelectWeapon();
         WeaponDraw();
         WeaponDamage();
-        MouseClickCounter();
+        // MouseClickCounter();
+        CheckForClicks("PrimaryAttack",0.2f);
         BowCount();
+        KeyPresstime();
         attackLevel = controller.playerAnimator.combatAnimator.j;
-
+        if (Input.GetMouseButton(0))
+        {
+            clicks = "PressDown";
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            clicks = "PressUp";
+        }
     }
 
 
@@ -49,18 +65,34 @@ public class HumanoidCombatController : CombatController
             weaponType = "Bow";
         }
     }
+
+    private void KeyPresstime()
+    {
+
+        if (clicks == "PressDown")
+        {
+            downTimeRight += Time.deltaTime;
+            butOnlyOnce = true;
+
+        }
+        if (clicks == "PressUp" && butOnlyOnce)
+        {
+            butOnlyOnce = false;
+            keydowntime = downTimeRight; // okay, now set
+            downTimeRight = 0; // and reset downTimeRight
+        }
+    }
     private void BowCount()
     {
         if (weaponType == "Bow")
         {
-            if (clickCount ==1 && Input.GetMouseButton(1))
-            {
-                
+            if (/*GetComponent<HumanoidCombatAnimator>().eventFunctionName == "BowFire"*/ keydowntime >= bowtimesetting && clicks == "PressUp")
+            {                
                 if (bowCount>0)
                 {
-                    bowCount = bowCount - 1;
-                }
-                
+                    bowCount -= 1;
+                    keydowntime = 0;
+                }               
             }
         }
     }
@@ -92,47 +124,108 @@ public class HumanoidCombatController : CombatController
         }
     }
 
-    private void MouseClickCounter()
+    private void CheckForClicks(string buttonName, float clickDelay)
     {
-        if (Input.GetMouseButtonDown(0))
+
+        if (Input.GetButtonDown(buttonName))
         {
-            clickCount++;
-            clickTime = Time.time;
+            _currClicks++;
+
+
+            _clickTime = 0;
         }
 
-        // Detect mouse button held down
-        if (Input.GetMouseButton(0))
-        {          
-            clicks = "PressDown";
-        }
+        if (_currClicks == 0) return;
 
-        // Detect mouse button released
-        if (Input.GetMouseButtonUp(0))
-        {
-            clicks = "PressUp";
-            if (Time.time - clickTime < clickDelay)
-            {
-                Invoke("CheckClicks", clickDelay);               
-            }
-        }
-    }
 
-    void CheckClicks()
-    {
-        if (clickCount == 1)
+        if (_clickTime < ClickDelay)
         {
-            clicks = "Single";
-            Debug.Log("single");
-        }
-        else if (clickCount == 2)
-        {
-            clicks = "Double";
-            Debug.Log("double");
-        }
-        else if (clickCount > 2)
-        {
+            _clickTime += Time.deltaTime;
             return;
         }
-        clickCount = 0;
+
+
+        HandleClicks(_currClicks);
+        _currClicks = 0;
+        _clickTime = 0;
+
     }
+    private void HandleClicks(int amountOfClicks)
+    {
+
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    clickCount++;
+        //    clickTime = Time.time;
+        //}
+
+        // Detect mouse button held down
+        //if (Input.GetMouseButton(0))
+        //{
+        //    clicks = "PressDown";
+        //    Debug.Log("pressdown");
+        //}
+        //if (Input.GetMouseButtonUp(0))
+        //{
+        //    clicks = "PressUp";
+        //}
+
+        if (amountOfClicks == 1)
+        {
+            clicks = "Single";
+        }
+        else if (amountOfClicks >= 2)
+        {
+            clicks = "Double";
+        }
+        //else if (amountOfClicks == 3)
+        //{
+        //    clicks = "Triple";
+        //}        
+    }
+    //private void MouseClickCounter()
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        clickCount++;
+    //        clickTime = Time.time;
+    //    }
+
+    //    // Detect mouse button held down
+    //    if (Input.GetMouseButton(0))
+    //    {          
+    //        clicks = "PressDown";
+    //    }
+
+    //    // Detect mouse button released
+    //    if (Input.GetMouseButtonUp(0))
+    //    {
+    //        clicks = "PressUp";
+    //        if (Time.time - clickTime < clickDelay)
+    //        {
+    //            Invoke("CheckClicks", clickDelay);               
+    //        }
+    //    }
+    //}
+
+    //void CheckClicks()
+    //{
+    //    if (clickCount == 1)
+    //    {
+    //        clicks = "Single";
+    //        Debug.Log("single");
+    //    }
+    //    else if (clickCount == 2)
+    //    {
+    //        clicks = "Double";
+    //        Debug.Log("double");
+    //    }
+    //    else if (clickCount > 2)
+    //    {
+    //        return;
+    //    }
+    //    clickCount = 0;
+    //}
 }
+
+

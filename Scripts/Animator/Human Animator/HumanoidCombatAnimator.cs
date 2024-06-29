@@ -72,7 +72,7 @@ public class HumanoidCombatAnimator : CombatAnimator
                         GetComponent<InputController>().isSheating = false;
                         GetComponent<InputController>().isJumpPressed = false;
                         GetComponent<InputController>().isloadingArrow = false;
-                        Debug.Log(PAnimator.CombatAnim[i].name);
+                        eventFunctionName = PAnimator.CombatAnim[i].name;
                     }
                     else
                     {
