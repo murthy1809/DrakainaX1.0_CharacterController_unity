@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b494b69dd65c1984db95dffe442d738d, type: 3}
   m_Name: BowFire
   m_EditorClassIdentifier: 
-  name: 
+  name: BowFire
   isCondition: 0
   AnimClips:
   - _FadeDuration: 0.25

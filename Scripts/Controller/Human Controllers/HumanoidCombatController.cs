@@ -6,14 +6,12 @@ public class HumanoidCombatController : CombatController
 {
     [SerializeField] internal PlayerController controller;
     [SerializeField] internal InputController inputController;
-    //[SerializeField] float ClickDelay = 0.2f;
     private float clickTime = 0.0f;
     [SerializeField] float clickDelay = 0.2f;
-    private int clickCount = 0;
-    string button;
-   
+    private int clickCount = 0;   
     public string clicks;
     public GameObject singleHandSword;
+    [SerializeField] int bowCount = 10;
 
     void Start()
     {
@@ -29,9 +27,11 @@ public class HumanoidCombatController : CombatController
         WeaponDraw();
         WeaponDamage();
         MouseClickCounter();
+        BowCount();
         attackLevel = controller.playerAnimator.combatAnimator.j;
 
     }
+
 
     private void SelectWeapon()
     {
@@ -49,6 +49,21 @@ public class HumanoidCombatController : CombatController
             weaponType = "Bow";
         }
     }
+    private void BowCount()
+    {
+        if (weaponType == "Bow")
+        {
+            if (clickCount ==1 && Input.GetMouseButton(1))
+            {
+                
+                if (bowCount>0)
+                {
+                    bowCount = bowCount - 1;
+                }
+                
+            }
+        }
+    }
 
     private void WeaponDraw()
     {
@@ -64,7 +79,6 @@ public class HumanoidCombatController : CombatController
             }
         }
     }
-
 
     private int WeaponDamage()
     {
@@ -84,21 +98,18 @@ public class HumanoidCombatController : CombatController
         {
             clickCount++;
             clickTime = Time.time;
-            Debug.Log("Mouse button pressed down");
         }
 
         // Detect mouse button held down
         if (Input.GetMouseButton(0))
         {          
             clicks = "PressDown";
-            Debug.Log(clicks);
         }
 
         // Detect mouse button released
         if (Input.GetMouseButtonUp(0))
         {
             clicks = "PressUp";
-            Debug.Log(clicks);
             if (Time.time - clickTime < clickDelay)
             {
                 Invoke("CheckClicks", clickDelay);               
@@ -113,16 +124,15 @@ public class HumanoidCombatController : CombatController
             clicks = "Single";
             Debug.Log("single");
         }
-        else if (clickCount >= 2)
+        else if (clickCount == 2)
         {
             clicks = "Double";
             Debug.Log("double");
         }
-        //else if (clickCount == 3)
-        //{
-        //    clicks = "Triple";
-        //    Debug.Log("triple");
-        //}##
+        else if (clickCount > 2)
+        {
+            return;
+        }
         clickCount = 0;
     }
 }
