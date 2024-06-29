@@ -9,6 +9,11 @@ public class MouseClickDetector : MonoBehaviour
     void Update()
     {
         // Detect mouse button pressed down
+        MouseClickCounter();
+    }
+
+    private void MouseClickCounter()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             clickCount++;

@@ -21,24 +21,6 @@ MonoBehaviour:
       - 1
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400020, guid: 0cf6cd90fa783f74d9a28a42e2071737, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
-    _Events:
-      _NormalizedTimes:
-      - 1
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400018, guid: 0cf6cd90fa783f74d9a28a42e2071737, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
-    _Events:
-      _NormalizedTimes:
-      - 1
-      _Callbacks: []
-      _Names: []
     _Clip: {fileID: 7400018, guid: 0cf6cd90fa783f74d9a28a42e2071737, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
@@ -52,10 +34,13 @@ MonoBehaviour:
   ObstacleDetect: 0
   IsHoverMode: 0
   IsFlying: 0
+  IsAction: 0
+  IsClimbing: 0
   IsPrimaryAttack: 1
   IsSecondaryAttack: 2
   IsCombatMode: 1
   IsSheating: 0
+  IsLoadingArrow: 0
   WeaponType: 1
   InputKey: 0
   PrimaryTaps: 1

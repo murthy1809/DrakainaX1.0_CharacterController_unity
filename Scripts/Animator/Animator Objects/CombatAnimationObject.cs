@@ -566,6 +566,14 @@ public class CombatAnimationObject : ScriptableObject
             {
                 primaryTaps = "Triple";
             }
+            else if (PrimaryTaps == Taps.PressDown)
+            {
+                primaryTaps = "PressDown";
+            }
+            else if (PrimaryTaps == Taps.PressUp)
+            {
+                primaryTaps = "PressUp";
+            }
             else if (PrimaryTaps == Taps.None)
             {
                 //primaryTaps = "None";
@@ -621,7 +629,7 @@ public class CombatAnimationObject : ScriptableObject
 
     public enum Taps
     {
-        None,Single,Double,Triple,PressDown
+        None,Single,Double,Triple,PressDown,PressUp
     }
 
     public Priority _Priority;

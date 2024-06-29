@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b494b69dd65c1984db95dffe442d738d, type: 3}
-  m_Name: 3. TripleSwordAttack
+  m_Name: BowFireSingle
   m_EditorClassIdentifier: 
   name: 
   isCondition: 0
@@ -18,34 +18,16 @@ MonoBehaviour:
   - _FadeDuration: 0.25
     _Events:
       _NormalizedTimes:
-      - 0.5
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400044, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
-    _Events:
-      _NormalizedTimes:
-      - 0.8
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400042, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
-    _Speed: NaN
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
-    _Events:
-      _NormalizedTimes:
       - 1
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400100, guid: a9e228972999b0d46a21e30edf97d812, type: 3}
+    _Clip: {fileID: -203655887218126122, guid: 82660e32aa3557a4b87f37eefff725e2, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
-  applyRootMotion: 1
-  IsMoving: 2
+  applyRootMotion: 0
+  IsMoving: 0
   IsGrounded: 1
-  IsModified: 1
+  IsModified: 0
   IsFalling: 0
   IsJumpPressed: 0
   IsCrouched: 0
@@ -55,12 +37,12 @@ MonoBehaviour:
   IsAction: 0
   IsClimbing: 0
   IsPrimaryAttack: 1
-  IsSecondaryAttack: 2
+  IsSecondaryAttack: 1
   IsCombatMode: 1
   IsSheating: 0
   IsLoadingArrow: 0
-  WeaponType: 2
+  WeaponType: 3
   InputKey: 0
-  PrimaryTaps: 2
+  PrimaryTaps: 5
   _Priority: 0
   Sounds: []

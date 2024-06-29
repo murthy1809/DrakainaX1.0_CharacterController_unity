@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b494b69dd65c1984db95dffe442d738d, type: 3}
-  m_Name: 4. BowFire
+  m_Name: BowFire
   m_EditorClassIdentifier: 
   name: 
   isCondition: 0
@@ -21,7 +21,7 @@ MonoBehaviour:
       - 1
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: -203655887218126122, guid: 4741cb1ac673ced4f9e4a0fed1408c93, type: 3}
+    _Clip: {fileID: -203655887218126122, guid: 82660e32aa3557a4b87f37eefff725e2, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
   applyRootMotion: 0
@@ -40,8 +40,9 @@ MonoBehaviour:
   IsSecondaryAttack: 1
   IsCombatMode: 1
   IsSheating: 0
+  IsLoadingArrow: 0
   WeaponType: 3
   InputKey: 0
-  PrimaryTaps: 1
+  PrimaryTaps: 5
   _Priority: 0
   Sounds: []

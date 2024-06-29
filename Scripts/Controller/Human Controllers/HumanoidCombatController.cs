@@ -6,9 +6,10 @@ public class HumanoidCombatController : CombatController
 {
     [SerializeField] internal PlayerController controller;
     [SerializeField] internal InputController inputController;
-    [SerializeField] float ClickDelay = 0.2f;
-    int _currClicks;
-    float _clickTime;
+    //[SerializeField] float ClickDelay = 0.2f;
+    private float clickTime = 0.0f;
+    [SerializeField] float clickDelay = 0.2f;
+    private int clickCount = 0;
     string button;
    
     public string clicks;
@@ -27,7 +28,7 @@ public class HumanoidCombatController : CombatController
         SelectWeapon();
         WeaponDraw();
         WeaponDamage();
-        CheckForClicks("PrimaryAttack", 0.5f);
+        MouseClickCounter();
         attackLevel = controller.playerAnimator.combatAnimator.j;
 
     }
@@ -77,97 +78,51 @@ public class HumanoidCombatController : CombatController
         }
     }
 
-    private void CheckForClicks(string buttonName, float clickDelay)
+    private void MouseClickCounter()
     {
-
-        if (Input.GetButtonDown(buttonName))
+        if (Input.GetMouseButtonDown(0))
         {
-            _currClicks++;
-
-
-            _clickTime = 0;
+            clickCount++;
+            clickTime = Time.time;
+            Debug.Log("Mouse button pressed down");
         }
 
-        if (_currClicks == 0) return;
-
-
-        if (_clickTime < ClickDelay)
-        {
-            _clickTime += Time.deltaTime;
-            return;
+        // Detect mouse button held down
+        if (Input.GetMouseButton(0))
+        {          
+            clicks = "PressDown";
+            Debug.Log(clicks);
         }
 
-
-        HandleClicks(_currClicks);
-        _currClicks = 0;
-        _clickTime = 0;
-
+        // Detect mouse button released
+        if (Input.GetMouseButtonUp(0))
+        {
+            clicks = "PressUp";
+            Debug.Log(clicks);
+            if (Time.time - clickTime < clickDelay)
+            {
+                Invoke("CheckClicks", clickDelay);               
+            }
+        }
     }
 
-    private void HandleClicks(int amountOfClicks)
+    void CheckClicks()
     {
-        if(weaponType == "SingleHandedSword")
+        if (clickCount == 1)
         {
-            if (amountOfClicks == 1)
-            {
-                clicks = "Single";
-            }
-            else if (amountOfClicks == 2)
-            {
-                clicks = "Double";
-            }
-            else if (amountOfClicks == 3)
-            {
-                clicks = "Triple";
-            }
-            else if (amountOfClicks > 3)
-            {
-                clicks = "Single";
-            }
-            else
-            {
-                clicks = "None";
-            }
+            clicks = "Single";
+            Debug.Log("single");
         }
-        if (weaponType == "Bow")
+        else if (clickCount >= 2)
         {
-            if (amountOfClicks == 1)
-            {
-                clicks = "Single";
-            }
-            else if (amountOfClicks == 2)
-            {
-                clicks = "Double";
-            }
-            //else if (amountOfClicks == 3)
-            //{
-            //    clicks = "Triple";
-            //}
-            //else if (amountOfClicks > 3)
-            //{
-            //    clicks = "Single";
-            //}
-            else
-            {
-                clicks = "None";
-            }
+            clicks = "Double";
+            Debug.Log("double");
         }
-
-        if (weaponType == "Fists")
-        {
-            if (amountOfClicks == 1)
-            {
-                clicks = "Single";
-            }
-            else if (amountOfClicks > 1)
-            {
-                clicks = "Single";
-            }
-            else
-            {
-                clicks = "None";
-            }
-        }
-     
+        //else if (clickCount == 3)
+        //{
+        //    clicks = "Triple";
+        //    Debug.Log("triple");
+        //}
+        clickCount = 0;
     }
 }

@@ -306,30 +306,8 @@ public class InputController : MonoBehaviour
             {
                 if (bowEquip)
                 {
-                    if (Input.GetButton("PrimaryAttack"))
-                    {
-                        Debug.Log("LoadArrow");
-                        isPrimaryAttack = true;
-                        isloadingArrow = true;
-                        arrowLoaded = true;
-                    }
-                    if (arrowLoaded)
-                    {
-                        if (Input.GetButton("PrimaryAttack"))
-                        {
-                            isPrimaryAttack = true;
-                            Debug.Log("DrawArrow");
-                            isloadingArrow = true;
-                        }
-                    }
-
-                    if (Input.GetButtonUp("PrimaryAttack"))
-                    {
-                        Debug.Log("ShootArrow");
-                        isPrimaryAttack = true;
-                        isloadingArrow = false;
-                        arrowLoaded = false;
-                    }
+                   // isloadingArrow = true;
+                    isPrimaryAttack = true;
                 }
                 else
                 {
