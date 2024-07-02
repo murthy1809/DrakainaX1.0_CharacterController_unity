@@ -5,7 +5,7 @@ using MedievalKingdomUI;
 using UnityEngine.UI;
 
 
-public class FlightStats : MonoBehaviour
+public class UIFlightStats : MonoBehaviour
 {
     public Slider speedSlider, staminaSlider;
     public Gradient gradient;

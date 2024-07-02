@@ -9,13 +9,13 @@ using UnityEngine;
 public class HumanoidController : ThirdPersonController
 {
     [SerializeField] internal HumanoidColliderManger humanoidCollider;
+    [SerializeField] internal HumanStats humanStats;
     [SerializeField] internal float jumpnum;
     [SerializeField] internal float crouchSpeed;
     [SerializeField] internal float walkSpeed,combatSpeed, climbSpeed;
-    [SerializeField] internal float stamina, staminaModifier, maxStamina,minStamina;
+    [SerializeField] internal float stamina, staminaDrainRate,staminaFillRate, maxStamina,minStamina;
     [SerializeField] internal GameObject target;
     internal bool isSecondaryAttack;
-    public HumanStats humanStats;
     float oldAngle;
     float currentAngle;
     int layerMask = 1 << 9;
@@ -33,10 +33,6 @@ public class HumanoidController : ThirdPersonController
         base.Update();
         CrouchAndSlide();
         SpeedLogic();
-        humanStats.CurrentStamina(stamina);
-        humanStats.SetMaxStamina(maxStamina);
-        humanStats.SetMinStamina(minStamina);
-        Stamina();
         isSecondaryAttack = playerController.inputController.isSecondaryAttack;
         isobstacle = humanoidCollider.humanoidRay.isObstacle;
         isClimbing = humanoidCollider.isClimbing;     
@@ -123,19 +119,19 @@ public class HumanoidController : ThirdPersonController
     {
         if (GetComponent<InputController>().isPrimaryAttack)
         {
-            speed = 0;
+            humanStats.speed = 0;
         }
         else if (GetComponent<InputController>().isCombatMode)
         {
-            speed = combatSpeed;
+            humanStats.speed = humanStats.combatSpeed;
         }
         else if (GetComponent<InputController>().isCrouch)
         {
-            speed = crouchSpeed;
+            humanStats.speed = humanStats.crouchSpeed;
         }
         else
         {
-            speed = walkSpeed;
+            humanStats.speed = humanStats.walkSpeed;
         }
     }
 
@@ -153,11 +149,11 @@ public class HumanoidController : ThirdPersonController
                     if (GetComponent<InputController>().isPrimaryAttack)
                     {
                         transform.rotation = Quaternion.Euler(transform.rotation.x, cam.eulerAngles.y, transform.rotation.z);
-                        controller.Move(moveDir.normalized * 0 * speedModifier * Time.deltaTime);
+                        controller.Move(moveDir.normalized * 0 * humanStats.speedModifier * Time.deltaTime);
                     }
                     else
                     {
-                        controller.Move(moveDir * speed * speedModifier * Time.deltaTime);
+                        controller.Move(moveDir * humanStats.speed * humanStats.speedModifier * Time.deltaTime);
                     }
                 }
             }
@@ -166,11 +162,11 @@ public class HumanoidController : ThirdPersonController
                 transform.rotation = Quaternion.Euler(transform.rotation.x, angle, transform.rotation.z);
                 if (GetComponent<InputController>().isPrimaryAttack)
                 {                  
-                    controller.Move(moveDir.normalized * 0 * speedModifier * Time.deltaTime);
+                    controller.Move(moveDir.normalized * 0 * humanStats.speedModifier * Time.deltaTime);
                 }
                 else
                 {
-                    controller.Move(moveDir * speed * speedModifier * Time.deltaTime);
+                    controller.Move(moveDir * humanStats.speed * humanStats.speedModifier * Time.deltaTime);
                 }
             }
         }
@@ -180,11 +176,11 @@ public class HumanoidController : ThirdPersonController
             oldAngle = angle;
             if (!isobstacle)
             {
-                controller.Move(AdjustedVelocityToSlope(moveDir.normalized * speed) * speedModifier * Time.deltaTime);
+                controller.Move(AdjustedVelocityToSlope(moveDir.normalized * humanStats.speed) * humanStats.speedModifier * Time.deltaTime);
             }
             else if (isobstacle)
             {
-                controller.Move(moveDir.normalized * 0 * speedModifier * Time.deltaTime);
+                controller.Move(moveDir.normalized * 0 * humanStats.speedModifier * Time.deltaTime);
             }
         }
         if (isClimbing)
@@ -197,12 +193,12 @@ public class HumanoidController : ThirdPersonController
             transform.position = new Vector3(humanoidCollider.ladderTransform.x, transform.position.y, humanoidCollider.ladderTransform.z - 0.73f);
             if (Input.GetKey(KeyCode.W) && isMoving)
             {
-                controller.Move(Vector3.up * climbSpeed * Time.deltaTime); // ClimbSpeed set to 2 always
+                controller.Move(Vector3.up * humanStats.climbSpeed * Time.deltaTime); // ClimbSpeed set to 2 always
 
             }
             if (Input.GetKey(KeyCode.S))
             {
-                controller.Move(-Vector3.up * climbSpeed * Time.deltaTime);
+                controller.Move(-Vector3.up * humanStats.climbSpeed * Time.deltaTime);
 
             }
         }
@@ -218,34 +214,15 @@ public class HumanoidController : ThirdPersonController
         if (isgrounded)
         {
             var slopeRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-            var adjustedVelocity = slopeRotation * moveDir.normalized * speed;
+            var adjustedVelocity = slopeRotation * moveDir.normalized * humanStats.speed;
             if (adjustedVelocity.y < 0)
             {
                 return adjustedVelocity;
             }
         }
-        return moveDir.normalized * speed;
+        return moveDir.normalized * humanStats.speed;
     }
-    private void Stamina()
-    {
-        if(isMoving && isModified)
-        {
-            stamina = stamina - staminaModifier;
-        }
-        else
-        {
-            stamina = stamina + staminaModifier;
-        }
-
-        if(stamina >= maxStamina)
-        {
-            stamina = maxStamina;
-        }
-        else if (stamina <=minStamina)
-        {
-            stamina = minStamina;
-        }
-    }
+    
 
     //public object CaptureState()
 

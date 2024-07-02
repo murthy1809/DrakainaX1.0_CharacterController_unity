@@ -31,7 +31,7 @@ public class DragonController : ThirdPersonController
     [SerializeField] internal float keydowntime;
     [SerializeField] GameObject model;
 
-    public FlightStats flightStats;
+    public UIFlightStats flightStats;
     private bool butOnlyOnce = false;
     bool spineAnimator = false;
     internal float startRollAngle;

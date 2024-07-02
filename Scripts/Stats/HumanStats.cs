@@ -1,36 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-//using MedievalKingdomUI;
 
-public class HumanStats : MonoBehaviour
+public class HumanStats : PlayerStats
 {
-    public Slider staminaSlider;
+    public UIHumanStats humanStats;
     void Start()
-    {
-   
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         
     }
-    public void CurrentStamina(float stamina)
+
+    protected override void Update()
     {
-        staminaSlider.value = stamina;
-        // fill.color = gradient.Evaluate(speedSlider.normalizedValue);
-    }
-    public void SetMinStamina(float minStamina)
-    {
-        staminaSlider.minValue = minStamina;
+        base.Update();
+        humanStats.CurrentStamina(stamina);
+        humanStats.SetMaxStamina(maxStamina);
+        humanStats.SetMinStamina(minStamina);
 
     }
 
-    public void SetMaxStamina(float maxStamina)
+    protected override void Stamina()
     {
-        staminaSlider.maxValue = maxStamina;
+        if (inputController.isCombatMode)
+        {
+            if (inputController.bowEquip)
+            {
+                if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
+                {
+                    stamina = stamina - staminaDrainRate;
+                }
+                else
+                {
+                    stamina = stamina + staminaFillRate;
+                }
 
+                if (stamina >= maxStamina)
+                {
+                    stamina = maxStamina;
+                }
+                else if (stamina <= minStamina)
+                {
+                    stamina = minStamina;
+                }
+            }
+        }
+        else
+        {
+            if (inputController.isMoving && inputController.isModified)
+            {
+                stamina = stamina - staminaDrainRate;
+            }
+            else
+            {
+                stamina = stamina + staminaFillRate;
+            }
+
+            if (stamina >= maxStamina)
+            {
+                stamina = maxStamina;
+            }
+            else if (stamina <= minStamina)
+            {
+                stamina = minStamina;
+            }
+        }
     }
 }

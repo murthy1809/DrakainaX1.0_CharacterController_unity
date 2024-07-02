@@ -441,7 +441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527719019}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13820758, y: 0.000000017041256, z: -0.0000000023780522, w: 0.9904033}
+  m_LocalRotation: {x: 0.13820758, y: 0.000000017041254, z: -0.0000000023780522, w: 0.9904033}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1337,7 +1337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529835675}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14253858, y: -0.000000008515345, z: 0.0000000012262865, w: 0.98978925}
+  m_LocalRotation: {x: 0.14253858, y: 0.000000008515345, z: -0.0000000012262865, w: 0.98978925}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2269,11 +2269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017041257
+      value: 0.000000017041256
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000023780526
+      value: -0.0000000023780524
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2782,11 +2782,11 @@ MonoBehaviour:
   combatSpeed: 1
   climbSpeed: 1
   stamina: 50
-  staminaModifier: 0.1
+  staminaDrainRate: 0.1
+  staminaFillRate: 0.1
   maxStamina: 50
   minStamina: 0
   target: {fileID: 1646721521}
-  humanStats: {fileID: 1307412887}
 --- !u!114 &1991193561302888994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3370,6 +3370,7 @@ GameObject:
   - component: {fileID: 1991193561302889009}
   - component: {fileID: 1991193561302888994}
   - component: {fileID: 1991193561302888993}
+  - component: {fileID: 1991193561302889057}
   - component: {fileID: 1991193561302889004}
   - component: {fileID: 1991193561302889010}
   - component: {fileID: 1991193561302889006}
@@ -3383,6 +3384,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1991193561302889057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991193561302889055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175987a9011445b4989161f0767493a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputController: {fileID: 1991193561302889003}
+  stamina: 50
+  maxStamina: 50
+  minStamina: 0
+  staminaDrainRate: 0.1
+  staminaFillRate: 0.1
+  hunger: 0
+  thirst: 0
+  health: 0
+  energy: 0
+  walkSpeed: 0
+  combatSpeed: 0
+  climbSpeed: 0
+  crouchSpeed: 0
+  humanStats: {fileID: 1307412887}
 --- !u!4 &1991193561338322648
 Transform:
   m_ObjectHideFlags: 0
@@ -24380,6 +24408,34 @@ PrefabInstance:
     - target: {fileID: 514414074332328083, guid: 8e0c6c1d50e6247449352a574495bf72, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 514414076056304563, guid: 8e0c6c1d50e6247449352a574495bf72, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 514414076056304563, guid: 8e0c6c1d50e6247449352a574495bf72, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 514414076056304563, guid: 8e0c6c1d50e6247449352a574495bf72, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1991193561302889057}
+    - target: {fileID: 514414076056304563, guid: 8e0c6c1d50e6247449352a574495bf72, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 514414076056304563, guid: 8e0c6c1d50e6247449352a574495bf72, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Stamina
+      objectReference: {fileID: 0}
+    - target: {fileID: 514414076056304563, guid: 8e0c6c1d50e6247449352a574495bf72, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HumanStats, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 514414076056304563, guid: 8e0c6c1d50e6247449352a574495bf72, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 514414076155985078, guid: 8e0c6c1d50e6247449352a574495bf72, type: 3}
       propertyPath: m_LocalPosition.x

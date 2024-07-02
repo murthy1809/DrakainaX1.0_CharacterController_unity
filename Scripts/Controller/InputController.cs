@@ -269,7 +269,7 @@ public class InputController : MonoBehaviour
             {
                 isCombatMode = true;
             }
-            else if (Input.GetButtonDown("HoistWeapons"))
+            else if (Input.GetButtonDown("Holster"))
             {
                 isCombatMode = false;
             }

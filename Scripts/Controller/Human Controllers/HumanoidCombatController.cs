@@ -38,6 +38,7 @@ public class HumanoidCombatController : CombatController
         BowCount();
         KeyPresstime();
         attackLevel = controller.playerAnimator.combatAnimator.j;
+
         if (Input.GetMouseButton(0))
         {
             clicks = "PressDown";
@@ -46,6 +47,7 @@ public class HumanoidCombatController : CombatController
         {
             clicks = "PressUp";
         }
+
     }
 
 
@@ -68,7 +70,6 @@ public class HumanoidCombatController : CombatController
 
     private void KeyPresstime()
     {
-
         if (clicks == "PressDown")
         {
             downTimeRight += Time.deltaTime;
@@ -79,6 +80,7 @@ public class HumanoidCombatController : CombatController
         {
             butOnlyOnce = false;
             keydowntime = downTimeRight; // okay, now set
+
             downTimeRight = 0; // and reset downTimeRight
         }
     }
@@ -150,7 +152,7 @@ public class HumanoidCombatController : CombatController
         _clickTime = 0;
 
     }
-    private void HandleClicks(int amountOfClicks)
+    public void HandleClicks(int amountOfClicks)
     {
 
         //if (Input.GetMouseButtonDown(0))

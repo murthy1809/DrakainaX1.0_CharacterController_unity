@@ -7,6 +7,7 @@ using Cinemachine;
 public class ThirdPersonController : MonoBehaviour
 {
     [SerializeField] internal PlayerController playerController;
+    [SerializeField] internal PlayerStats playerStats;
     [SerializeField] PlayerScript playerScript;
     [SerializeField] internal CharacterController controller;
     //[SerializeField] internal ColliderManager colliderManager;
@@ -130,7 +131,7 @@ public class ThirdPersonController : MonoBehaviour
         if (isMoving )
         {
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * speed;
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * playerStats.walkSpeed;
             //transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
            // vcam.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
             if (!isobstacle)
