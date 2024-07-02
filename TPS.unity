@@ -441,7 +441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527719019}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13820758, y: 0.000000017041254, z: -0.0000000023780522, w: 0.9904033}
+  m_LocalRotation: {x: 0.13820758, y: 0.000000017041257, z: -0.0000000023780524, w: 0.9904033}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1337,7 +1337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529835675}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14253858, y: 0.000000008515345, z: -0.0000000012262865, w: 0.98978925}
+  m_LocalRotation: {x: 0.14253858, y: -0.000000008515345, z: 0.0000000012262865, w: 0.98978925}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2269,11 +2269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017041256
+      value: 0.000000017041259
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000023780524
+      value: -0.0000000023780529
       objectReference: {fileID: 0}
     - target: {fileID: 558807679123437398, guid: 5308285e0a2e2c740afbbc88726b69a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2750,6 +2750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1991193561302889000}
+  playerStats: {fileID: 1991193561302889057}
   playerScript: {fileID: 1991193561302888997}
   controller: {fileID: 1991193561302888996}
   cam: {fileID: 608209452}
@@ -2776,6 +2777,7 @@ MonoBehaviour:
   num4: 0.9
   key: 0
   humanoidCollider: {fileID: 1991193561302889004}
+  humanStats: {fileID: 1991193561302889057}
   jumpnum: 0.5
   crouchSpeed: 0.5
   walkSpeed: 2
@@ -3406,10 +3408,14 @@ MonoBehaviour:
   thirst: 0
   health: 0
   energy: 0
-  walkSpeed: 0
-  combatSpeed: 0
+  speed: 4
+  walkSpeed: 4
+  combatSpeed: 0.5
   climbSpeed: 0
   crouchSpeed: 0
+  speedModifier: 2
+  maxSpeedModifier: 0
+  minSpeedModifer: 0
   humanStats: {fileID: 1307412887}
 --- !u!4 &1991193561338322648
 Transform:
@@ -22091,6 +22097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 8403933871942641017}
+  playerStats: {fileID: 0}
   playerScript: {fileID: 8403933871942641020}
   controller: {fileID: 0}
   cam: {fileID: 608209452}

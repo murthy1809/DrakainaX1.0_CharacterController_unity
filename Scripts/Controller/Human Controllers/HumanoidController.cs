@@ -166,7 +166,7 @@ public class HumanoidController : ThirdPersonController
                 }
                 else
                 {
-                    controller.Move(moveDir * humanStats.speed * humanStats.speedModifier * Time.deltaTime);
+                    controller.Move(moveDir * humanStats.combatSpeed * humanStats.speedModifier * Time.deltaTime);
                 }
             }
         }
