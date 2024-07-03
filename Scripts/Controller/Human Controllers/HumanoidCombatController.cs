@@ -19,6 +19,7 @@ public class HumanoidCombatController : CombatController
     float ClickDelay = 0.2f;
     public GameObject singleHandSword;
     [SerializeField] int bowCount = 10;
+    public bool arrowLoad= false;
 
     void Start()
     {
@@ -84,18 +85,37 @@ public class HumanoidCombatController : CombatController
             downTimeRight = 0; // and reset downTimeRight
         }
     }
+    /*GetComponent<HumanoidCombatAnimator>().eventFunctionName == "BowFire"*/
     private void BowCount()
     {
         if (weaponType == "Bow")
         {
-            if (/*GetComponent<HumanoidCombatAnimator>().eventFunctionName == "BowFire"*/ keydowntime >= bowtimesetting && clicks == "PressUp")
-            {                
-                if (bowCount>0)
+            if (bowCount > 0)
+            {
+                if(inputController.isSecondaryAttack)
                 {
-                    bowCount -= 1;
-                    keydowntime = 0;
-                }               
+                    if (!arrowLoad && clicks == "Double")
+                    {
+                        arrowLoad = true;
+                    }
+                    if (keydowntime >= bowtimesetting && clicks == "PressUp")
+                    {
+                        bowCount -= 1;
+                        keydowntime = 0;
+                        arrowLoad = false;
+                    }
+                }
+                else
+                {
+                    arrowLoad = false;
+                }
             }
+
+            if (bowCount == 0 && inputController.isSecondaryAttack)
+            {
+                inputController.isPrimaryAttack = false;
+            }
+
         }
     }
 
@@ -154,23 +174,6 @@ public class HumanoidCombatController : CombatController
     }
     public void HandleClicks(int amountOfClicks)
     {
-
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    clickCount++;
-        //    clickTime = Time.time;
-        //}
-
-        // Detect mouse button held down
-        //if (Input.GetMouseButton(0))
-        //{
-        //    clicks = "PressDown";
-        //    Debug.Log("pressdown");
-        //}
-        //if (Input.GetMouseButtonUp(0))
-        //{
-        //    clicks = "PressUp";
-        //}
 
         if (amountOfClicks == 1)
         {

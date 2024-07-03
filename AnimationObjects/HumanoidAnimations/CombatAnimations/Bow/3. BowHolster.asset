@@ -21,7 +21,7 @@ MonoBehaviour:
       _Callbacks: []
       _Names: []
     _Clip: {fileID: -203655887218126122, guid: 345794828eba37742aae41cb0246a129, type: 3}
-    _Speed: 1
+    _Speed: -1
     _NormalizedStartTime: NaN
   applyRootMotion: 0
   IsMoving: 2
@@ -37,7 +37,7 @@ MonoBehaviour:
   IsClimbing: 0
   IsPrimaryAttack: 0
   IsSecondaryAttack: 2
-  IsCombatMode: 1
+  IsCombatMode: 0
   IsSheating: 1
   WeaponType: 3
   InputKey: 0

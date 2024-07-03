@@ -148,11 +148,11 @@ public class ThirdPersonController : MonoBehaviour
     {
         if (isModified)
         {
-            speedModifier = maxSpeedModifier;
+            playerStats.speedModifier = playerStats.maxSpeedModifier;
         }
         else
         {
-            speedModifier = minSpeedModifer;
+            playerStats.speedModifier = playerStats.minSpeedModifer;
         }
     }
 
