@@ -98,7 +98,7 @@ public class HumanoidCombatController : CombatController
                     {
                         arrowLoad = true;
                     }
-                    if (keydowntime >= bowtimesetting && clicks == "PressUp")
+                    if (arrowLoad && keydowntime >= bowtimesetting && clicks == "PressUp")
                     {
                         bowCount -= 1;
                         keydowntime = 0;
@@ -111,12 +111,12 @@ public class HumanoidCombatController : CombatController
                 }
             }
 
-            if (bowCount == 0 && inputController.isSecondaryAttack)
+            if (bowCount <=1 && inputController.isSecondaryAttack)
             {
                 inputController.isPrimaryAttack = false;
             }
-
         }
+
     }
 
     private void WeaponDraw()
