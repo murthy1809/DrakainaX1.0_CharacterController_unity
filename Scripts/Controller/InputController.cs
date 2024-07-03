@@ -25,6 +25,7 @@ public class InputController : MonoBehaviour
     public bool isHoverMode =false;
     public string directions;
     public bool isClimbing;
+    public bool isHolster = true;
     private float pressDuration = 0f;
 
     // combat//
@@ -318,30 +319,36 @@ public class InputController : MonoBehaviour
             {
                 isCrouch = false;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                if (!swordEquip) // !!bowEquip && !!magicEqiup
-                {
-                    fistEquip = !fistEquip;
-                    isCombatMode = !isCombatMode;
-                }
-             
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            //if (Input.GetKeyDown(KeyCode.Alpha1) &&!swordEquip && !bowEquip)
+            //{
+            //    fistEquip = !fistEquip;
+            //    isCombatMode = !isCombatMode;
+            //    isSheating = false;
+            //}
+            //if (fistEquip && isHolster)
+            //{
+            //    isSheating = false;
+            //    isCombatMode = false;
+            //    isHolster = true;
+            //}
+            if (Input.GetKeyDown(KeyCode.Alpha2) && isHolster)
             {
                 fistEquip = false;
                 isCombatMode = true;
                 isSheating = true;
                 swordEquip = true;
+                bowEquip = false;
+                isHolster = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            if (Input.GetKeyDown(KeyCode.Alpha3) && isHolster)
             {
                 fistEquip = false;
                 swordEquip = false;
                 isCombatMode = true;
                 isSheating = true;
-                bowEquip = true;               
+                bowEquip = true;
+                isHolster = false;
             }
 
             if (Input.GetButton("Holster"))
@@ -350,6 +357,8 @@ public class InputController : MonoBehaviour
                 isSheating = true;
                 swordEquip = false;
                 bowEquip = false;
+                fistEquip = false;
+                isHolster = true;
             }
 
                 //if (isSheating)

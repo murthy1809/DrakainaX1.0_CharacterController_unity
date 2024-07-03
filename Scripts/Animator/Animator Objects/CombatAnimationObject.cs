@@ -442,9 +442,9 @@ public class CombatAnimationObject : ScriptableObject
             {
                 isSheating = false;
             }
-            else
+            else if (IsSheating == Options.OR)
             {
-                isSheating = false;
+                isSheating = FindObjectOfType<InputController>().isSheating;
             }
             return isSheating;
         }

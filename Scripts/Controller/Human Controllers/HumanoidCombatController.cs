@@ -18,8 +18,8 @@ public class HumanoidCombatController : CombatController
     float _clickTime;
     float ClickDelay = 0.2f;
     public GameObject singleHandSword;
-    [SerializeField] int bowCount = 10;
-    public bool arrowLoad= false;
+    [SerializeField] int arrowCount = 10;
+    public bool arrowLoad;
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class HumanoidCombatController : CombatController
         WeaponDamage();
         // MouseClickCounter();
         CheckForClicks("PrimaryAttack",0.2f);
-        BowCount();
+        ArrowCount();
         KeyPresstime();
         attackLevel = controller.playerAnimator.combatAnimator.j;
 
@@ -48,7 +48,6 @@ public class HumanoidCombatController : CombatController
         {
             clicks = "PressUp";
         }
-
     }
 
 
@@ -86,37 +85,32 @@ public class HumanoidCombatController : CombatController
         }
     }
     /*GetComponent<HumanoidCombatAnimator>().eventFunctionName == "BowFire"*/
-    private void BowCount()
+    private void ArrowCount()
     {
-        if (weaponType == "Bow")
+        if (inputController.bowEquip)
         {
-            if (bowCount > 0)
+            if (arrowCount > 0)
             {
                 if(inputController.isSecondaryAttack)
                 {
-                    if (!arrowLoad && clicks == "Double")
+                    if (clicks == "Double")
                     {
                         arrowLoad = true;
                     }
                     if (arrowLoad && keydowntime >= bowtimesetting && clicks == "PressUp")
                     {
-                        bowCount -= 1;
+                        arrowCount -= 1;
                         keydowntime = 0;
                         arrowLoad = false;
                     }
                 }
-                else
-                {
-                    arrowLoad = false;
-                }
-            }
-
-            if (bowCount <=1 && inputController.isSecondaryAttack)
-            {
-                inputController.isPrimaryAttack = false;
             }
         }
-
+        else if (!inputController.bowEquip && clicks == "Double")
+        {
+            clicks = "None";
+            arrowLoad = false;
+        }
     }
 
     private void WeaponDraw()
