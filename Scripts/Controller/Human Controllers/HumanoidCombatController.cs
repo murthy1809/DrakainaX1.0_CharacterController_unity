@@ -17,7 +17,7 @@ public class HumanoidCombatController : CombatController
     int _currClicks;
     float _clickTime;
     float ClickDelay = 0.2f;
-    public GameObject singleHandSword, arrow;
+    public GameObject singleHandSword, arrow,bow;
     [SerializeField] int arrowCount = 10;
     public bool arrowLoad;
 
@@ -26,6 +26,7 @@ public class HumanoidCombatController : CombatController
         weaponType = "Fists";
         singleHandSword.SetActive(false);
         arrow.SetActive(false);
+        bow.SetActive(false);
     }
 
     // Update is called once per frame
@@ -133,10 +134,12 @@ public class HumanoidCombatController : CombatController
             if (playerController.inputController.isCombatMode)
             {
                 arrow.SetActive(true);
+                bow.SetActive(true);
             }
             else if (!playerController.inputController.isCombatMode && !playerController.inputController.isSheating)
             {
                 arrow.SetActive(false);
+                bow.SetActive(false);
             }
         }
     }
